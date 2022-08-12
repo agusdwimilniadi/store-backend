@@ -1,0 +1,30 @@
+<table id="example2" class="table table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Nama Koin</th>
+      <th>Jumlah Koin</th>
+      <th>Harga Koin</th>
+      <th>Aksi(s)</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% for( let index = 0; index < nominal.length; index++ ) { %>
+    <tr>
+      <td> <%= index+1 %> </td>
+      <td> <%= nominal[index].coinName %> </td>
+      <td> <%= nominal[index].coinQuantity %> </td>
+      <td> <%= nominal[index].price %> </td>
+      <td> <form action="/nominal/delete/<%= nominal[index]._id %>?_method=DELETE" method="post">
+        <a href="/nominal/delete/<%= nominal[index]._id %> " class="btn btn-warning"> <i class="fas fa-pencil-alt"></i>  Ubah</a>
+        <button class="btn btn-danger"><i class="fas fa-trash"></i>  Hapus</button>
+      </form> </td>
+
+
+    </tr>
+    <% } %>
+
+  </tbody>
+
+</table>
